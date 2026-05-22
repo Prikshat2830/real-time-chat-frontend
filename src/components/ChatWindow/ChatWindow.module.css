@@ -1,0 +1,29 @@
+.chat{
+    background: rgb(21, 0, 255);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    padding: 15px;
+    background: rgb(21, 0, 255);
+    border-bottom: 2px solid #ccc;
+    color: white;
+    font-weight: 600;
+}
+
+.messages{
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: rgb(21, 0, 255);
+}
+
+.empty{
+    background: rgb(21, 0, 255);
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

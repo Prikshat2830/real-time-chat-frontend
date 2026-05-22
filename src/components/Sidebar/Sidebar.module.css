@@ -1,0 +1,128 @@
+.sidebar{
+    width: 30%;
+    background: #8400ff;
+    border-right: 1px solid #595959;
+}
+
+.header{
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.newGroup{
+    display: flex;
+    justify-content: space-around;
+}
+
+.item{
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* .item:hover{
+    background: #f5f5f5;
+} */
+
+.logot{
+    padding: 10px;
+    cursor: pointer;
+    background: #1900ff;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    margin-left: -110px;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.newchat{
+    padding: 10px;
+    cursor: pointer;
+    background: #1900ff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+
+}
+
+.users{
+    margin-bottom: 20px;
+
+    h4{
+        margin-bottom: 10px;
+    }
+}
+
+.chatList{
+    h4{
+        margin-bottom: 5px;
+    }
+}
+
+.selected {
+    background-color: #d1e7ff;
+}
+
+.userItem {
+    padding: 12px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chatItem {
+    padding: 12px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.selected {
+    background: #cce5ff;
+}
+
+.userItem {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.selectedUser {
+    padding: 8px;
+    background-color: #8400ff;
+    color: white;
+    cursor: pointer;
+}
+
+.logout{
+    padding: 12px;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid #1910ff;
+    background: #1900ff;
+}
+
+.groupbtn{
+    padding: 12px;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid #1910ff;
+    background: #1900ff;
+}
+
+.groupname{
+    padding: 8px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

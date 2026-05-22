@@ -1,0 +1,29 @@
+.meWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.otherWrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.me {
+    background-color: #0059ff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 4px;
+    max-width: 60%;
+    align-self: flex-end;
+}
+
+.other {
+    background-color: #b700ff;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 4px;
+    max-width: 60%;
+    align-self: flex-start;
+}
