@@ -42,7 +42,7 @@ export default function Sidebar({ setChat }) {
     }, [user, initialized]);
 
     const handleCreateChat = async (userId) => {
-    const chat = await createChatAPI(userId, user.token);
+    const chat = await createChatAPI({ userId }, user.token);
     setChat(chat);
 };
 
@@ -64,7 +64,7 @@ export default function Sidebar({ setChat }) {
 
     const newChat = await createChatAPI(
         {
-            chatName: groupName,
+            name: groupName,
             users: JSON.stringify(selectedUsers.map(u => u._id))
         },
         user.token
