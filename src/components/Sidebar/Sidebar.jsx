@@ -151,7 +151,36 @@ export default function Sidebar({ setChat }) {
                         className={styles.chatItem}
                         onClick={() => setChat(chat)}
                     >
-                        {chat.chatName}
+                        <div className={styles.chatAvatar}>
+                {getChatName(chat)?.charAt(0).toUpperCase()}
+            </div>
+
+            <div className={styles.chatInfo}>
+
+                <div className={styles.chatTop}>
+                    <h4>{getChatName(chat)}</h4>
+                </div>
+
+                {chat.isGroupChat ? (
+                    <div className={styles.chatMembers}>
+
+                        {chat.users
+                            ?.filter(u => u._id !== user?._id)
+                            .slice(0, 3)
+                            .map(u => u.name)
+                            .join(", ")}
+
+                        {chat.users?.length > 4 &&
+                            ` +${chat.users.length - 4}`}
+
+                    </div>
+                ) : (
+                    <div className={styles.chatMembers}>
+                        Tap to chat
+                    </div>
+                )}
+
+            </div>
                     </div>
                 ))}
             </div>
