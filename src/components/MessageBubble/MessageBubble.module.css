@@ -30,7 +30,8 @@
 
 .time{
     font-size: 11px;
-    margin-top: 5px;
+    margin-top: 15px;
     opacity: 0.7;
+    color: white;
     text-align: right;
 }
