@@ -193,7 +193,7 @@ export default function Sidebar({ setChat }) {
                         .map(u => (
                             <div
                                 key={u._id}
-                                className={styles.userItem}
+                                className={styles.chatItem}
                                 onClick={() => handleCreateChat(u._id)}
                             >
                                 <div className={styles.chatAvatar}>
