@@ -180,8 +180,8 @@ export default function Sidebar({ setChat }) {
                     </div>
                 )}
 
-            </div>
-                    </div>
+                </div>
+                </div>
                 ))}
             </div>
 
@@ -196,7 +196,17 @@ export default function Sidebar({ setChat }) {
                                 className={styles.userItem}
                                 onClick={() => handleCreateChat(u._id)}
                             >
-                                {u.name}
+                                <div className={styles.chatAvatar}>
+                                    {u.name.charAt(0).toUpperCase()}
+                                </div>
+
+                            <div className={styles.chatInfo}>
+
+                                <div className={styles.chatTop}>
+                                    <h4>{u.name}</h4>
+                                </div>
+
+                            </div>
                             </div>
                         ))}
                 </div>

@@ -63,6 +63,7 @@
 }
 
 .chatList{
+    width: 100%;
     h4{
         margin-bottom: 5px;
     }
@@ -128,13 +129,12 @@
 }
 
 .chatItem{
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
     gap: 12px;
-
     padding: 12px;
     cursor: pointer;
-
     transition: 0.2s;
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -146,23 +146,22 @@
 .chatAvatar{
     width: 48px;
     height: 48px;
-
     border-radius: 50%;
-
     background: linear-gradient(135deg,#00c6ff,#0072ff);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: white;
     font-size: 20px;
     font-weight: bold;
-
     flex-shrink: 0;
 }
 
 .chatInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
     flex: 1;
     overflow: hidden;
 }
@@ -181,10 +180,8 @@
 
 .chatMembers{
     margin-top: 4px;
-
     font-size: 13px;
     color: rgba(255,255,255,0.65);
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
