@@ -1,7 +1,11 @@
 .sidebar{
     width: 30%;
+    height: 100vh;
     background: #8400ff;
     border-right: 1px solid #595959;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -56,17 +60,53 @@
 
 .users{
     margin-bottom: 20px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    position: relative;
 
     h4{
         margin-bottom: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        /* background: #8400ff; */
+        padding: 12px;
+        margin: 0;
+        color: white;
     }
 }
 
 .chatList{
     width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    position: relative;
+
     h4{
         margin-bottom: 5px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        /* background: #8400ff; */
+        /* padding: 12px; */
+        margin: 0;
+        color: white;
     }
+}
+
+.chatList::-webkit-scrollbar,
+.users::-webkit-scrollbar{
+    width: 6px;
+}
+
+.chatList::-webkit-scrollbar-thumb,
+.users::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
 }
 
 .selected {
