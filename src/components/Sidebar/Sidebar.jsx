@@ -143,7 +143,7 @@ export default function Sidebar({ setChat }) {
                 </div>
             )}
 
-            <div className={styles.chatList}>
+            {/* <div className={styles.chatList}>
             <h4>Group List</h4>
                 {chats.map(chat => (
                     <div
@@ -183,7 +183,41 @@ export default function Sidebar({ setChat }) {
                 </div>
                 </div>
                 ))}
+            </div> */}
+            <div className={styles.chatList}>
+    <h4>Group List</h4>
+
+    {chats
+        .filter(chat => chat.isGroupChat)
+        .map(chat => (
+            <div
+                key={chat._id}
+                className={styles.chatItem}
+                onClick={() => setChat(chat)}
+            >
+                <div className={styles.chatAvatar}>
+                    {getChatName(chat)?.charAt(0).toUpperCase()}
+                </div>
+
+                <div className={styles.chatInfo}>
+                    <div className={styles.chatTop}>
+                        <h4>{getChatName(chat)}</h4>
+                    </div>
+
+                    <div className={styles.chatMembers}>
+                        {chat.users
+                            ?.filter(u => u._id !== user?._id)
+                            .slice(0, 3)
+                            .map(u => u.name)
+                            .join(", ")}
+
+                        {chat.users?.length > 4 &&
+                            ` +${chat.users.length - 4}`}
+                    </div>
+                </div>
             </div>
+        ))}
+</div>
 
             {!isGroupMode && (
                 <div className={styles.users}>

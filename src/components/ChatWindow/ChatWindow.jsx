@@ -38,25 +38,49 @@ export default function ChatWindow({ chat }) {
         endRef.current?.scrollIntoView({ behavior: "smooth" })
     }, [messages])
 
+    // useEffect(() => {
+    // if (!chat) return;
+
+    // const messageHandler = (msg) => {
+    //     console.log("message recieved:", msg)
+    //     if (msg.chat._id !== chat._id) return;
+
+    //     setMessages((prev) => {
+    //         if (prev.find(m => m._id === msg._id)) return prev;
+    //         return [...prev, msg];
+    //     });
+    // };
+
+    // socket.on("message received", messageHandler)
+
+    // return () => {
+    //     socket.off("message received", messageHandler)
+    // };
+    // }, [chat]);
+
     useEffect(() => {
     if (!chat) return;
 
     const messageHandler = (msg) => {
-        console.log("message recieved:", msg)
+        console.log("message received:", msg);
+
         if (msg.chat._id !== chat._id) return;
 
-        setMessages((prev) => {
-            if (prev.find(m => m._id === msg._id)) return prev;
+        setMessages(prev => {
+            if (prev.find(m => m._id === msg._id)) {
+                return prev;
+            }
+
             return [...prev, msg];
         });
     };
 
-    socket.on("message recieved", messageHandler);
+    socket.on("message received", messageHandler);
 
     return () => {
-        socket.off("message recieved", messageHandler);
+        socket.off("message received", messageHandler);
     };
-    }, [chat]);
+}, [chat]);
 
     if (!chat) return <div className={styles.empty}>Select a Chat</div>
 
