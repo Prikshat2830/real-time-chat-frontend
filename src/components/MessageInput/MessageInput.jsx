@@ -21,7 +21,7 @@ export default function MessageInput({ chat, setMessages }) {
 
     console.log("sending message:", message)
     socket.emit("new message", message); 
-    setMessages(prev => [...prev, message]);
+    // setMessages(prev => [...prev, message]);
     
     setText("");
     };

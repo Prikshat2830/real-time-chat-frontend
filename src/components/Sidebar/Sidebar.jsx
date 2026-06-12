@@ -91,7 +91,9 @@ export default function Sidebar({ setChat }) {
     const getChatName = (chat) => {
     if (chat.isGroupChat) return chat.chatName;
 
-    const otherUser = chat.users.find(u => u._id !== user?._id);
+    const otherUser = chat.users.find(
+        u => u._id.toString() !== user?._id.toString()
+    );
     return otherUser?.name;
 };
 
